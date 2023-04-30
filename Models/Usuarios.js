@@ -1,27 +1,49 @@
 const mongoose = require("../DB/ConectionDB");
 
-const Usuarios = mongoose.Schema({
-
-    usuario: {
-        type: String,
-        require: true,
-        unique: true
-    },
-    clave: {
-        type: String,
-        require: true
-    },
-    rol: {
-        type: String,
-        require: true
-    },
-    correo: {
-        type: String,
-        require: true
+const usuarioSquema = mongoose.Schema({
+        cedula:{
+            type:'string',
+            required: true,
+            unique: true
+        },
+        nombre:{
+            type:'string',
+            required:true
+        },
+        apellido:{
+            type:'string',
+            required:true
+        },
+        direccion:{
+            type:'string'
+        },
+        correo:{
+            type:'string'
+        },
+        telefono:{
+            type:'string'
+        },
+        genero:{
+            type:'string',
+            required:true
+        },
+        fecha_nacimiento:{
+            type:'Date',
+            required:true
+        },
+        estado:{
+            type:'string',
+            required:true
+        },
+        rol:{
+            type:'string',
+            required:true
+        }
+        
+    },{
+        collection: "Usuarios",
+        versionKey: false
     }
-},{
-    collection: 'Usuarios',
-    versionKey: false
-})
+);
 
-module.exports = mongoose.model('Usuarios', Usuarios)
+module.exports = mongoose.model('Usuarios',usuarioSquema);
