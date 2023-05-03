@@ -1,6 +1,6 @@
 const mongoose = require("../DB/ConectionDB");
 
-const usuarioSquema = mongoose.Schema({
+const Usuarios = mongoose.Schema({
         cedula:{
             type:'string',
             required: true,
@@ -46,4 +46,4 @@ const usuarioSquema = mongoose.Schema({
     }
 );
 
-module.exports = mongoose.model('Usuarios',usuarioSquema);
+module.exports = mongoose.model('Usuarios', Usuarios);
