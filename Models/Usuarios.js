@@ -38,12 +38,12 @@ const Usuarios = mongoose.Schema({
         rol:{
             type:'string',
             required:true
-        }
-        
-    },{
-        collection: "Usuarios",
-        versionKey: false
-    }
+        },
+        password:{
+            type:'string',
+            required:true
+        },
+    },
 );
 
 module.exports = mongoose.model('Usuarios', Usuarios);
