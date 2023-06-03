@@ -1,4 +1,4 @@
-const url = "http://Localhost:4000/Usuarios";
+const url = "http://Localhost:4000/Usuarios/";
 //const url = "API PARA TRAER USUARIOS"
 
 export async function getListaUsuarios(){
@@ -24,7 +24,7 @@ export async function editarUsuario(usuario){
 }
 
 export async function eliminarUsuario(id){
-    const res = await fetch(url+'/',`${id}`,{
+    const res = await fetch(url+`${id}`,{
         method: 'DELETE',
         headers:{'content-type': 'application/json'},
     });

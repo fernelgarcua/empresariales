@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { getListaUsuarios,eliminarUsuario } from '../Api/UsuariosApi'
 import TablaUsuarios from './TablaUsuarios'
-import Navegador from './Navegador'
+import Navegador from '../Components/Navegador'
 
 
 function Usuario() {
@@ -14,6 +14,7 @@ function Usuario() {
     Listar()
 
     const eliminar = (id) => {
+      console.log("Id:" + id)
       eliminarUsuario(id).then((data)=> {
         console.log(data)
         if(data.deletedCount === 1)
