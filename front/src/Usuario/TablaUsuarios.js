@@ -2,6 +2,7 @@ import React from 'react'
 
 function TablaUsuarios(props) {
     const {Usuarios,onDelete,onView} = props;
+    console.log(props);
     
   return (
     <table className='table table-stripe'>

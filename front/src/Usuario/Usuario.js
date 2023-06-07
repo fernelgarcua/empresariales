@@ -1,17 +1,33 @@
-import React, { useState } from 'react'
-import { getListaUsuarios,eliminarUsuario } from '../Api/UsuariosApi'
+import React, { useState, useEffect } from 'react'
+import { getListaUsuarios,eliminarUsuario, agregarUsuario, actualizarUsuario } from '../Api/UsuariosApi'
 import TablaUsuarios from './TablaUsuarios'
 import Navegador from '../Components/Navegador'
+import Prueba from './Prueba'
 
 
 function Usuario() {
     const [Usuarios,SetUsuarios] = useState([])
+    const [mostrarLista,setMostrarLista] = useState(true)
+
+    function prueba  (usuario) {
+        console.log("usuarios --------->",usuario);
+    }
     
     const Listar = () =>{
       getListaUsuarios().then((data)=>{SetUsuarios(data)}).catch((err)=>{console.log(err)})
     }
 
     Listar()
+
+    const guardar = (usuario) => {
+      if (usuario._id === null){
+        console.log("hola")
+        //agregarUsuario(usuario).then((data) => {Listar()}).catch((err) => {console.log(err)})
+      }else{
+        //actualizarUsuario(usuarios).then((data) => Listar()).catch((err) => {console.log(err)})
+      }
+      setMostrarLista(true);
+    }
 
     const eliminar = (id) => {
       console.log("Id:" + id)
@@ -24,7 +40,7 @@ function Usuario() {
 
 
   
-  const [mostrarLista,setMostrarLista] = useState(true)
+
     
    const verLista = (e) =>{
       if(mostrarLista){
@@ -52,8 +68,12 @@ function Usuario() {
     <div>
       <Navegador/>
       <TablaUsuarios Usuarios = {Usuarios} onDelete = {eliminar} onView={verLista}/> 
+      {!mostrarLista && <div>
+        <Prueba otro={prueba} />
+        </div>}
     </div>
   )
 }
 
 export default Usuario;
+

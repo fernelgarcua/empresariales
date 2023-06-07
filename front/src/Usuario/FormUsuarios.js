@@ -1,17 +1,44 @@
-import React, { useState } from 'react'
-import Navegador from '../Components/Navegador'
+import React, { useEffect, useState } from 'react';
+//import Navegador from '../Components/Navegador'
 
-function FormUsuarios() {
+function FormUsuario(props) {
+  console.log("Hola",props)
+const {getUser, setUser, otro, registrar=false} = props;
 
-const [usuario,setUsuario]= useState()
+const [usuario,setUsuario]= useState({
+            id_: null,
+            Cedula:"",
+            Nombre:"",
+            Apellido:"",
+            Dirección:"",
+            correo:"",
+            telefono:"",
+            genero:"",
+            fecha_nacimiento:"",
+            estado:"",
+            rol:"",
+            Contraseña:""
+})
 const handleChange=(e)=>{
     setUsuario({
         ...usuario, [e.target.Nombre] : e.target.value
     })
 }
+
+useEffect(() =>{
+  if(setUser)
+    setUsuario(setUser)
+}, [setUser])
+
+const onclickGuardar = (e) => {
+  e.preventDefault();
+  otro(usuario);
+  //limpiar();
+};
+
   return (
       <div>
-        <Navegador/>
+
         <div className="col-xxl" id="agregarUsuario" >
                   <div className="card mb-4">
                     <div className="card-header d-flex align-items-center justify-content-between">
@@ -94,7 +121,7 @@ const handleChange=(e)=>{
                       </div>
                         <div className="row justify-content-end">
                           <div className="col-sm-10">
-                            <button type="button" className="btn btn-primary">Guardar</button>
+                            <button type="button" className="btn btn-primary" onClick={onclickGuardar}>Guardar</button>
                             <a href="#" className="btn btn-danger">Cancelar</a>
                           </div>
                           </div>
@@ -107,4 +134,4 @@ const handleChange=(e)=>{
   )
 }
 
-export default FormUsuarios
+export default FormUsuario;
