@@ -1,22 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import { agregarUsuario } from '../Api/UsuariosApi';
+import { useNavigate } from "react-router-dom";
 //import Navegador from '../Components/Navegador'
 
 function FormUsuario() {
 
+const navigate=useNavigate()  
 const [usuario,setUsuario]= useState({
-            id_: null,
-            Cedula:"",
-            Nombre:"",
-            Apellido:"",
-            Dirección:"",
+            
+            cedula:"",
+            nombre:"",
+            apellido:"",
+            direccion:"",
             correo:"",
             telefono:"",
             genero:"",
             fecha_nacimiento:"",
             estado:"",
             rol:"",
-            Contraseña:""
+            password:""
 })
 const handleChange=(e)=>{
     setUsuario({
@@ -29,7 +31,7 @@ const handleSubmit = async e => {
 
   const response = await agregarUsuario(usuario)
 
-  console.log(response)
+  navigate("/Usuario")
 }
 
 /* useEffect(() =>{
@@ -47,6 +49,18 @@ const handleSubmit = async e => {
                     </div>
                     <div className="card-body">
                       <form onSubmit={handleSubmit}>
+                      <div className="row mb-3">
+                          <label className="col-sm-2 col-form-label">Cedula</label>
+                          <div className="col-sm-10">
+                            <input 
+                              type="text"
+                              className="form-control"
+                              id="cedula"
+                              name="cedula"
+                              placeholder="Digite el nombre del Usuario"
+                              onChange={handleChange} />
+                          </div>
+                        </div>
                         <div className="row mb-3">
                           <label className="col-sm-2 col-form-label">Nombre</label>
                           <div className="col-sm-10">
@@ -139,8 +153,8 @@ const handleSubmit = async e => {
                             <input 
                               type="password" 
                               className="form-control" 
-                              id="contrasena" 
-                              name="contrasena" 
+                              id="password" 
+                              name="password" 
                               placeholder="Digite la contraseña del Usuario" 
                               onChange={handleChange} />
                           </div>

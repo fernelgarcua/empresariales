@@ -45,11 +45,13 @@ export async function login(usuario){
 export async function agregarUsuario(usuarios){
     const res = await fetch(url, {
         method: 'POST',
-        headers: {'content-type': 'application/json',
-        body: JSON.stringify(usuarios)}
+        headers: {'content-type': 'application/json'},
+        body: JSON.stringify(usuarios)
     });
 
     const data = await res.json();
+    console.log(usuarios)
+    console.log(data)
 
     return data.usuarios
 }

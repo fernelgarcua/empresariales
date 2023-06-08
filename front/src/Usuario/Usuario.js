@@ -17,7 +17,10 @@ function Usuario() {
       getListaUsuarios().then((data)=>{SetUsuarios(data)}).catch((err)=>{console.log(err)})
     }
 
-    Listar()
+    //Listar()
+    useEffect(()=>{
+      Listar()
+    },[])
 
     const guardar = (usuario) => {
       if (usuario._id === null){
