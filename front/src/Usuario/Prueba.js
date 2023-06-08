@@ -6,7 +6,7 @@ function Prueba(props) {
     console.log(props);
 
     return (
-        <div>Hola</div>
+        <div>Hola, esta es una prueba</div>
     )
 
 }
