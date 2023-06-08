@@ -191,7 +191,7 @@ const handleSubmit = async e => {
                         <div className="row justify-content-end">
                           <div className="col-sm-10">
                             <button type="submit" className="btn btn-primary">Guardar</button>
-                            <a href="#" className="btn btn-danger">Cancelar</a>
+                            <a href="/Usuario" className="btn btn-danger">Cancelar</a>
                           </div>
                           </div>
                       </form>
