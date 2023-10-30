@@ -8,6 +8,10 @@ function Home() {
   return (
     <body style={{backgroundColor:"white"}}>
       <Navegador/>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
       <h1 style={{fontFamily:"fantasy", textAlign: "center"}}>
       Un enfoque interdisciplinario del conocimiento para un mundo en evolución sostenible
         
