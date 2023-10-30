@@ -12,12 +12,12 @@ function TablaUsuarios(props) {
             <th>Nombre</th>
             <th>Apellido</th>
             <th>Dirección</th>
-            <th>correo</th>
-            <th>telefono</th>
-            <th>genero</th>
-            <th>fecha_nacimiento</th>
-            <th>estado</th>
-            <th>rol</th>
+            <th>Correo</th>
+            <th>Telefono</th>
+            <th>Genero</th>
+            <th>Fecha Nacimiento</th>
+            <th>Entidad</th>
+            <th>Rol</th>
             <th>Contraseña</th>
             <th></th>
             <th></th>

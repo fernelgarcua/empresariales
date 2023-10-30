@@ -169,23 +169,22 @@ const handleSubmit = async e => {
                           onChange={handleChange}>
                           <option selected="">Seleccionar Opción</option>
                           <option value="administrador">Administrador</option>
-                          <option value="personal">Personal</option>
-                          <option value="paciente">Paciente</option>
+                          <option value="ponente">Ponente</option>
+                          <option value="participante">Participante</option>
                         </select>
                         </div>
                       </div>
                         <div className="row mb-3">
-                        <label className="col-sm-2 col-form-label">Estado</label>
+                        <label className="col-sm-2 col-form-label">Entidad del que proviene</label>
                         <div className="col-sm-10">
-                        <select 
-                          className="form-select" 
-                          id="estado" 
-                          name="estado" 
-                          onChange={handleChange}>
-                          <option selected="">Seleccionar Opción</option>
-                          <option value="1">Activo</option>
-                          <option value="0">Inactivo</option>
-                        </select>
+                        
+                        <input
+                             type="text"
+                              className="form-control"
+                              id="estado"
+                              name="estado"
+                              placeholder="Digite de que entidad proviene"
+                              onChange={handleChange} />
                         </div>
                       </div>
                         <div className="row justify-content-end">
